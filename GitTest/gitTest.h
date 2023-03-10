@@ -7,6 +7,10 @@ class Person {
 public:
 	Person();
 	Person(int k, int j);
+	Person(Person& p);
+	Person& operator=(Person& p);
+
+	~Person();
 
 
 private:
