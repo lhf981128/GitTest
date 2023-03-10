@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClInclude Include="gitTest.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gitTest.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
