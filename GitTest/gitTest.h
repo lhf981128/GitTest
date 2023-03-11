@@ -19,4 +19,5 @@ private:
 };
 ostream& operator<<(ostream& os, const Person& p) {
 	os << p.a << endl;
+	return os;
 }
