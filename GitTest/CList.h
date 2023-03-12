@@ -45,8 +45,18 @@ public:
 		if (node == nullptr) {
 			dCount++;
 			node = new ListNode<T>(tElem);
-
+			return;
 		}
+		Append(node->Next(), tElem);
+	}
+	//插入一个元素
+	void Insert(T* tElem) {
+		dCount++;
+		if (head == nullptr) {
+			head = new ListNode<T>(tElem);
+			return;
+		}
+		ListNode<T>* temp = head;
 	}
 
 	~CList() {
