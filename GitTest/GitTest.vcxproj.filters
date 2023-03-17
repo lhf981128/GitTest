@@ -60,6 +60,9 @@
     <ClCompile Include="src\stlTest.cpp">
       <Filter>源文件\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\MyMain.cpp">
+      <Filter>源文件\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\CList.h">

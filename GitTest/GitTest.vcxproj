@@ -151,6 +151,7 @@
     <ClCompile Include="src\InterViewText2.cpp" />
     <ClCompile Include="src\MeiTuanCode1.cpp" />
     <ClCompile Include="src\MeiTuanCode2.cpp" />
+    <ClCompile Include="src\MyMain.cpp" />
     <ClCompile Include="src\PointerAndArray.cpp" />
     <ClCompile Include="src\stlTest.cpp" />
   </ItemGroup>
