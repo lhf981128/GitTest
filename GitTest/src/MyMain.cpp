@@ -34,7 +34,8 @@ struct Vector3 {
 
 	Vector3(const Vector3& other) = delete;
 
-	Vector3(Vector3&& other) :x(other.x), y(other.y), z(other.z)//ÒÆ¶¯
+	//ÒÆ¶¯
+	Vector3(Vector3&& other)noexcept :x(other.x), y(other.y), z(other.z)
 	{
 		m_MemoryBlock = other.m_MemoryBlock;
 		other.m_MemoryBlock = nullptr;
@@ -43,7 +44,7 @@ struct Vector3 {
 
 	Vector3& operator=(const Vector3& other) = delete;
 
-	Vector3& operator=(Vector3&& other) {
+	Vector3& operator=(Vector3&& other)noexcept {
 		cout << other.x<< "Move"<<"2\n";
 		m_MemoryBlock = other.m_MemoryBlock;
 		other.m_MemoryBlock = nullptr;
