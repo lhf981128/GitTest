@@ -25,71 +25,71 @@ int func1(unsigned int i)
 	return temp;
 }
 
-string RePlace(string a) {
-	int n = a.size();
-	int count = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (a[i] == '{')
-		{
-			count++;
-		}
-	}
-
-	while (count--)
-	{
-		int index1 = a.find("{");
-		int index2 = a.find("}");
-		a.replace(index1,index2,"*");
-	}
-
-	return a;
-}
-
-bool IsMatch(string s, string p)
-{
-	int m = s.size();
-	int n = p.size();
-	vector<vector<int>> dp(m + 1, vector<int>(n + 1));
-	dp[0][0] = true;
-	for (int i = 1; i <= n; ++i)
-	{
-		if (p[i - 1] == '*')
-		{
-			dp[0][i] = true;
-		}
-		else {
-			break;
-		}
-	}
-	for (int i = 1; i <= m; i++)
-	{
-		for (int j = 1; j <= n; ++j)
-		{
-			if (p[j - 1] == '*')
-			{
-				dp[i][j] = dp[i][j - 1] | dp[i - 1][j];
-			}
-			else if (p[j - 1] == '*' || s[i - 1] == p[j - 1])
-			{
-				dp[i][j] = dp[i - 1][j - 1];
-			}
-		}
-	}
-	return dp[m][n];
-}
-
-vector<bool> Query(vector<string> &str, string &rule) {
-	vector<bool> res;
-	rule=RePlace(rule);
-	for (int i = 0; i < str.size(); i++)
-	{
-		bool a = IsMatch(str[i], rule);
-		res.push_back(a);
-	}
-	return res;
-
-}
+//string RePlace(string a) {
+//	int n = a.size();
+//	int count = 0;
+//	for (int i = 0; i < n; i++)
+//	{
+//		if (a[i] == '{')
+//		{
+//			count++;
+//		}
+//	}
+//
+//	while (count--)
+//	{
+//		int index1 = a.find("{");
+//		int index2 = a.find("}");
+//		a.replace(index1,index2,"*");
+//	}
+//
+//	return a;
+//}
+//
+//bool IsMatch(string s, string p)
+//{
+//	int m = s.size();
+//	int n = p.size();
+//	vector<vector<int>> dp(m + 1, vector<int>(n + 1));
+//	dp[0][0] = true;
+//	for (int i = 1; i <= n; ++i)
+//	{
+//		if (p[i - 1] == '*')
+//		{
+//			dp[0][i] = true;
+//		}
+//		else {
+//			break;
+//		}
+//	}
+//	for (int i = 1; i <= m; i++)
+//	{
+//		for (int j = 1; j <= n; ++j)
+//		{
+//			if (p[j - 1] == '*')
+//			{
+//				dp[i][j] = dp[i][j - 1] | dp[i - 1][j];
+//			}
+//			else if (p[j - 1] == '*' || s[i - 1] == p[j - 1])
+//			{
+//				dp[i][j] = dp[i - 1][j - 1];
+//			}
+//		}
+//	}
+//	return dp[m][n];
+//}
+//
+//vector<bool> Query(vector<string> &str, string &rule) {
+//	vector<bool> res;
+//	rule=RePlace(rule);
+//	for (int i = 0; i < str.size(); i++)
+//	{
+//		bool a = IsMatch(str[i], rule);
+//		res.push_back(a);
+//	}
+//	return res;
+//
+//}
 
 
 
