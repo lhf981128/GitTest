@@ -13,63 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="头文件\inc">
-      <UniqueIdentifier>{770db60e-5b81-42d8-b810-525603a7adec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\src">
-      <UniqueIdentifier>{324b7a15-97a0-4d06-b108-a351bf120cfd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gitTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gitTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\1.c">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ClassAddress.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CodeTest.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CodeTest2.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CodeTest3.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gitTest.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\InterViewTest.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\InterViewText2.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MeiTuanCode1.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\MeiTuanCode2.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\PointerAndArray.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\stlTest.cpp">
-      <Filter>源文件\src</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="inc\CList.h">
-      <Filter>头文件\inc</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\gitTest.h">
-      <Filter>头文件\inc</Filter>
-    </ClInclude>
-    <ClInclude Include="inc\MyVector.h">
-      <Filter>头文件\inc</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -78,7 +78,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\VS2019wenjian\GitTest\GitTest\src;E:\VS2019wenjian\GitTest\GitTest\inc;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -140,24 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\1.c" />
-    <ClCompile Include="src\ClassAddress.cpp" />
-    <ClCompile Include="src\CodeTest.cpp" />
-    <ClCompile Include="src\CodeTest2.cpp" />
-    <ClCompile Include="src\CodeTest3.cpp" />
-    <ClCompile Include="src\gitTest.cpp" />
-    <ClCompile Include="src\InterViewTest.cpp" />
-    <ClCompile Include="src\InterViewText2.cpp" />
-    <ClCompile Include="src\MeiTuanCode1.cpp" />
-    <ClCompile Include="src\MeiTuanCode2.cpp" />
-    <ClCompile Include="src\PointerAndArray.cpp" />
-    <ClCompile Include="src\stlTest.cpp" />
+    <ClInclude Include="CList.h" />
+    <ClInclude Include="gitTest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="inc\CList.h" />
-    <ClInclude Include="inc\gitTest.h" />
-    <ClInclude Include="inc\MyVector.h" />
+    <ClCompile Include="gitTest.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
