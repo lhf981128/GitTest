@@ -156,6 +156,7 @@
     <ClCompile Include="src\stlTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CSatck.h" />
     <ClInclude Include="inc\CList.h" />
     <ClInclude Include="inc\gitTest.h" />
     <ClInclude Include="inc\MyVector.h" />

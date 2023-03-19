@@ -74,5 +74,8 @@
     <ClInclude Include="inc\MyVector.h">
       <Filter>头文件\inc</Filter>
     </ClInclude>
+    <ClInclude Include="CSatck.h">
+      <Filter>头文件\inc</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
