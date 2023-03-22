@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	cout << "stack-int collection" << endl;
-	for (; sta->Count();) {
+	for (; sta->Size();) {
 		cout<<*sta->Peek()<<endl;
 		sta->Pop();
 	}

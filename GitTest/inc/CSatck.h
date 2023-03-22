@@ -22,12 +22,15 @@ public:
 		Insert(Elem);
 	}
 	virtual void Pop() {
-		T* temp = GetFirst();
+		T* temp = CList<T>::GetFirst();  // NOLINT(clang-diagnostic-microsoft-template)
 		Remove(temp);
 	}
-	CList<T>::Count;
+	int Size()
+	{
+		return CList<T>::Count();
+	}
 	virtual T* Peek() {
-		return GetFirst();
+		return CList<T>::GetFirst();
 	}
 
 };
