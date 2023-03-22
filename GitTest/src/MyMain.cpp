@@ -209,6 +209,9 @@ void PrintVector3(const MyVector<Vector3>& ve) {
 	}
 }
 
+
+
+//测试forward保证完美转发与引用折叠
 void PrintT(int &t)
 {
 	cout << "lvalue" << endl;

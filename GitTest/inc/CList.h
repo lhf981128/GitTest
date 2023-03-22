@@ -1,7 +1,7 @@
 #pragma once
 #ifndef CLIST_H
 	#define CLIST_H
-#endif // !CLIST_H
+
 #include<iostream>
 using namespace std;
 
@@ -10,27 +10,61 @@ class ListNode {
 	friend bool operator<(ListNode& a,ListNode& b);
 public:
 	//有参构造
-	ListNode(T* elem):element(elem),next(0) {
+	ListNode(T* elem):element(new T(*elem)),next(nullptr) {
 
 	}
 
 	//拷贝构造
+	ListNode(const ListNode& lis){
+		delete element;//先释放本身开辟的内存
 
+		if (lis.element != nullptr) {
+			element = new T(*lis.element);
+		}
+		if (lis.next != nullptr) {
+			next = new ListNode(*lis.next);
+		}
+
+	}
 
 	//拷贝赋值
-
+	ListNode& operator=(const ListNode& lis) {
+		if (this != lis) {
+			delete element;//先释放本身开辟的内存
+			if (lis.element != nullptr) {
+				element = new T(*lis.element);
+			}
+			if (lis.next != nullptr) {
+				next = new ListNode(*lis.next);
+			}
+		}
+		return *this;
+	}
 
 	//移动构造
+	ListNode(ListNode&& lis)noexcept:element(lis.element), next(lis.next) {
+		lis.element = nullptr;
+		lis.next = nullptr;
+	}
 
 	//移动赋值
+	LsitNode& operator=(ListNode&& lis)noexcept {
 
+		element = lis.element;
+		next = lis.next;
+		lis.element = nullptr;
+		lis.next = nullptr;
+	}
 
 
 	T* Element() {
 		return element;
 	}
 	ListNode*& Next() { return next; }
+
 	~ListNode() {
+		delete element;
+		delete next;
 	}
 
 
@@ -102,7 +136,7 @@ public:
 
 	}
 	//获取元素个数
-	int Count() {
+	int Count()const {
 		return dCount;
 	}
 	//返回头节点
@@ -169,8 +203,14 @@ public:
 
 
 
-	~CList() {
-		delete head;
+	virtual ~CList() {
+		//需要循环删除节点的内存
+		ListNode<T>* cur = head;
+		while (cur != nullptr) {
+			ListNode<T>* net = cur->Next();
+			delete cur;
+			cur = net;
+		}
 	}
 protected:
 	CList(const CList& lst) {
@@ -223,36 +263,21 @@ protected:
 		
 		return *this;
 	}
-	CList(const CList&& list) noexcept {
-		if (list.head == nullptr) {
-			head=nullptr;
-		}
-		if (list->head != nullptr) {
-
-
-
-			dCount = move(list.dCount);
-			list.head = nullptr;
-		}
+	CList(CList&& list) noexcept {
+		head = list.head;
+		dCount = list.dCount;
+		list.head = nullptr;
 		
 	}
-	CList& operator=(const CList&& list) noexcept {
-		/*if (this != &list) {
-			if (head->element != nullptr)
-			{
-				delete head->element;
-			}
-			if (list.head != nullptr) {
-				head->element = new T(*list.head->element);
-			}
-			dCount = move(list.dCount);
-
-			list.head = nullptr;
-			return *this
-		}*/
+	CList& operator=(CList&& list) noexcept {
+		head = list.head;
+		dCount = list.dCount;
+		list.head = nullptr;
 	}
 
 private:
 	int dCount;
 	ListNode<T>* head;
 };
+
+#endif // !CLIST_H
