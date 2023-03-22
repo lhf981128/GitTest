@@ -16,6 +16,6 @@ int main(int argc, char* argv[]) {
 	}
 	delete sta;
 
-	system("pause");
+	system("pause");  // NOLINT(concurrency-mt-unsafe)
 	return 0;
 }

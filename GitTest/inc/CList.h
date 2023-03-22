@@ -48,7 +48,7 @@ public:
 	}
 
 	//ÒÆ¶¯¸³Öµ
-	LsitNode& operator=(ListNode&& lis)noexcept {
+	ListNode& operator=(ListNode&& lis)noexcept {
 
 		element = lis.element;
 		next = lis.next;
@@ -76,7 +76,7 @@ private:
 template<typename T>
 
 bool operator<(ListNode<T>& a, ListNode<T>& b) {
-	return *(a.element)<*(b.element)
+	return *(a.element) < *(b.element);
 }
 
 
@@ -246,10 +246,10 @@ protected:
 			else
 			{
 				ListNode<T>* node = new ListNode<T>();
-				node->Element() = lst.head->Element();
+				node->Element() = list.head->Element();
 				node->Next() = nullptr;
 				head = node;
-				ListNode<T>* cur = lst.head->Next();
+				ListNode<T>* cur = list.head->Next();
 				ListNode<T>* cal = head;
 				while (cur != nullptr) {
 					cal->Next = new ListNode<T>();
